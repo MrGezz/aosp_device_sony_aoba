@@ -15,7 +15,10 @@
 #
 $(call inherit-product, device/sony/hikari/full_hikari.mk)
 
-PRODUCT_NAME := aosp_hikari
+# Inherit AOSPXS
+$(call inherit-product, vendor/aospxs/config/common.mk)
+
+PRODUCT_NAME := aospxs_hikari
 
 PRODUCT_PACKAGES += \
     Launcher3
