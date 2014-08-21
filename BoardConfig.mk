@@ -35,7 +35,7 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 COMMON_GLOBAL_CFLAGS += -DLEGACY_BLOB_COMPATIBLE
 
 # kernel
-TARGET_KERNEL_CONFIG := fuji_hikari_defconfig
+TARGET_KERNEL_CONFIG := fuji_aoba_defconfig
 TARGET_KERNEL_SOURCE := kernel/sony/msm8x60
 
 # display
