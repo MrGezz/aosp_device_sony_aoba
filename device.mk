@@ -18,7 +18,7 @@
 BUILD_TARGET := normal
 
 # overlay
-DEVICE_PACKAGE_OVERLAYS += device/sony/hikari/overlay
+DEVICE_PACKAGE_OVERLAYS += device/sony/aoba/overlay
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -33,8 +33,8 @@ PRODUCT_PACKAGES += \
 
 # Post recovery script
 PRODUCT_COPY_FILES += \
-    device/sony/hikari/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/sony/hikari/recovery/rebootrecovery.sh:recovery/root/sbin/rebootrecovery.sh
+    device/sony/aoba/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
+    device/sony/aoba/recovery/rebootrecovery.sh:recovery/root/sbin/rebootrecovery.sh
 
 # Device specific part for two-stage boot
 PRODUCT_COPY_FILES += \
@@ -167,6 +167,7 @@ PRODUCT_COPY_FILES += \
 # Custom init / uevent
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/init.semc.rc:root/init.semc.rc \
+    $(LOCAL_PATH)/config/init.semc.rc:root/init.semc.service.rc \
     $(LOCAL_PATH)/config/init.sony.rc:root/init.sony.rc \
     $(LOCAL_PATH)/config/ueventd.semc.rc:root/ueventd.semc.rc
 
