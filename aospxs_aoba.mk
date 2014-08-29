@@ -13,12 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, device/sony/hikari/full_hikari.mk)
+$(call inherit-product, device/sony/aoba/full_aoba.mk)
 
 # Inherit AOSPXS
 $(call inherit-product, vendor/aospxs/config/common.mk)
 
-PRODUCT_NAME := aospxs_hikari
+PRODUCT_NAME := aospxs_aoba
 
 PRODUCT_PACKAGES += \
     Launcher3
