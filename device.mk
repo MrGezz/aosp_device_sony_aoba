@@ -228,12 +228,6 @@ PRODUCT_PACKAGES += \
     Email \
     Stk
 
-PRODUCT_PACKAGES += \
-    busybox
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
-
 PRODUCT_PROPERTY_OVERRIDES += \
     qemu.hw.mainkeys=1
 
