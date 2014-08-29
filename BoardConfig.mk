@@ -40,7 +40,7 @@ TARGET_KERNEL_SOURCE := kernel/sony/msm8x60
 
 # display
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/sony/hikari/config/egl.cfg
+BOARD_EGL_CFG := device/sony/aoba/config/egl.cfg
 
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
@@ -53,7 +53,7 @@ BOARD_USES_ALSA_AUDIO := true
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/sony/hikari/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/sony/aoba/bluetooth
 
 # sensor
 BOARD_USES_GENERIC_INVENSENSE := false
@@ -112,20 +112,20 @@ BOARD_KERNEL_PAGESIZE := 2048
 # TWRP
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_PRE_COMMAND := "touch /cache/recovery/boot;sync;"
-TARGET_RECOVERY_INITRC := device/sony/hikari/recovery/init.rc
+TARGET_RECOVERY_INITRC := device/sony/aoba/recovery/init.rc
 DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_NO_SEPARATE_RECOVERY := true
 TW_NO_USB_STORAGE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_SDCARD_INTERNAL_DEVICE := /dev/block/mmcblk0p15
+BOARD_SDCARD_INTERNAL_DEVICE := /dev/block/mmcblk0p18
 
-TARGET_RECOVERY_FSTAB := device/sony/hikari/recovery/fstab.semc
+TARGET_RECOVERY_FSTAB := device/sony/aoba/recovery/fstab.semc
 RECOVERY_FSTAB_VERSION := 2
 
-TARGET_OTA_ASSERT_DEVICE := LT26,LT26i,LT26ii,hikari
+TARGET_OTA_ASSERT_DEVICE := LT28,LT28h,LT28i,aoba
 
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/hikari/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/aoba/custombootimg.mk
 
--include vendor/sony/hikari/BoardConfigVendor.mk
+-include vendor/sony/aoba/BoardConfigVendor.mk
