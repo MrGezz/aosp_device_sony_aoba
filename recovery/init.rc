@@ -7,7 +7,6 @@ on init
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
-    export EXT_STORAGE /sd-ext
 
     symlink /system/etc /etc
 
@@ -26,7 +25,7 @@ on init
 
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0fce
-    write /sys/class/android_usb/android0/idProduct 6169
+    write /sys/class/android_usb/android0/idProduct 6176
     write /sys/class/android_usb/android0/functions adb
     write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
     write /sys/class/android_usb/android0/iProduct ${ro.product.model}
@@ -42,7 +41,6 @@ on boot
 
 on post-fs
     mount vfat /dev/block/mmcblk0p18 /sdcard
-    mount vfat /dev/block/mmcblk1p1 /sd-ext
 
 service ueventd /sbin/ueventd
     critical
@@ -63,3 +61,5 @@ on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
     restart adbd
     write /sys/class/android_usb/android0/enable 1
+    
+    

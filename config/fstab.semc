@@ -4,8 +4,8 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 /dev/block/mmcblk0p3  /boot  emmc  defaults  recoveryonly
-/dev/block/mmcblk0p15  /system  ext4  ro,barrier=1  wait
-/dev/block/mmcblk0p16  /cache   ext4  noatime,nosuid,nodev,barrier=1,data=ordered  wait,check
+/dev/block/mmcblk0p15  /system  ext4  ro,barrier=1                                                 wait
+/dev/block/mmcblk0p16  /cache   ext4  noatime,nosuid,nodev,barrier=1,data=ordered                  wait,check
 /dev/block/mmcblk0p17  /data    ext4  noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc  wait,check,encryptable=footer
 
 # sdcard mounting

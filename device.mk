@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-# define build target(normal/native/loop)
+# define build target(normal)
 BUILD_TARGET := normal
 
 # overlay
@@ -67,8 +67,8 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8660 \
     audio.a2dp.default \
     audio.usb.default \
-	audio.r_submix.default \
-	libaudio-resampler
+    audio.r_submix.default \
+    libaudio-resampler
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
@@ -171,26 +171,13 @@ PRODUCT_COPY_FILES += \
 # Custom init / uevent
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/init.semc.rc:root/init.semc.rc \
-    $(LOCAL_PATH)/config/init.semc.service.rc:root/init.semc.service.rc \
     $(LOCAL_PATH)/config/init.sony.rc:root/init.sony.rc \
     $(LOCAL_PATH)/config/ueventd.semc.rc:root/ueventd.semc.rc
 
 # Normal/Native/Loop
-ifeq ($(BUILD_TARGET),native)
-    PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/config/fstab.semc:root/fstab.semc \
-        $(LOCAL_PATH)/config/init.sony-platform.native.rc:root/init.sony-platform.rc
-else ifeq ($(BUILD_TARGET),loop)
-    PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/config/fstab.loop.semc:root/fstab.semc \
-        $(LOCAL_PATH)/config/init.sony-platform.loop.rc:root/init.sony-platform.rc
-    PRODUCT_PACKAGES += \
-        losetup-static
-else
-    PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/config/fstab.semc:root/fstab.semc \
-        $(LOCAL_PATH)/config/init.sony-platform.rc:root/init.sony-platform.rc
-endif
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/config/fstab.semc:root/fstab.semc \
+     $(LOCAL_PATH)/config/init.sony-platform.rc:root/init.sony-platform.rc
 
 # Recovery
 PRODUCT_PACKAGES += \

@@ -38,6 +38,9 @@ COMMON_GLOBAL_CFLAGS += -DLEGACY_BLOB_COMPATIBLE
 TARGET_KERNEL_CONFIG := fuji_aoba_defconfig
 TARGET_KERNEL_SOURCE := kernel/sony/msm8x60
 
+# Partition information
+BOARD_VOLD_MAX_PARTITIONS := 18
+
 # display
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/sony/aoba/config/egl.cfg
